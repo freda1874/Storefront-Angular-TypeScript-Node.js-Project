@@ -15,20 +15,4 @@ The **Storefront** project covers:
 ![image](https://github.com/user-attachments/assets/23ce016b-7116-4907-9be8-00ab6e40735f)
 ![image](https://github.com/user-attachments/assets/368a4c65-6bf8-4b2c-8abc-c76a4ce1af7d)
 
-## 📖 Additional Resources
 
-- [Angular Documentation](https://angular.io/docs)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Express Documentation](https://expressjs.com/)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please submit a pull request or open an issue to discuss potential changes.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-Feel free to customize this README to suit your project's specific needs!
