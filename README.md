@@ -1,7 +1,7 @@
 # Storefront: Angular and Node.js Full Stack Project
 
 This is a beginner-friendly full-stack project that combines **Angular** as the frontend framework and **Node.js** with **Express** as the backend to display, manage, and rate clothing items. 
-The project follows this tutorial: [YouTube Tutorial - Full Stack Angular and Node.js Project](https://www.youtube.com/watch?v=f7BJFTEbc10). 
+
 ## 🚀 Project Overview
 
 The **Storefront** project covers:
@@ -22,3 +22,5 @@ Add new item
 ![image](https://github.com/user-attachments/assets/368a4c65-6bf8-4b2c-8abc-c76a4ce1af7d)
 
 
+Credits:
+The project follows this tutorial: [YouTube Tutorial - Full Stack Angular and Node.js Project](https://www.youtube.com/watch?v=f7BJFTEbc10). 
