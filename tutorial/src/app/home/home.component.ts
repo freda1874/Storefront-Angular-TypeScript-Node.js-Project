@@ -28,6 +28,8 @@ export class HomeComponent {
   totalRecords: number = 0;
   rows: number = 8;
 
+  backendURL =
+    'https://storefront-angular-fbh5ggh0ahb7c3gy.canadacentral-01.azurewebsites.net/clothes/';
   displayEditPopup: boolean = false;
   displayAddPopup: boolean = false;
 
@@ -83,7 +85,7 @@ export class HomeComponent {
 
   fetchProducts(page: number, perPage: number) {
     this.productService
-      .getProducts('http://localhost:3000/clothes', { page, perPage })
+      .getProducts(this.backendURL, { page, perPage })
       .subscribe({
         next: (data: Products) => {
           this.products = data.items;
@@ -96,48 +98,42 @@ export class HomeComponent {
   }
 
   editProduct(product: Product, id: number) {
-    this.productService
-      .editProduct(`http://localhost:3000/clothes/${id}`, product)
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.fetchProducts(0, this.rows);
-          this.resetPaginator();
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.productService.editProduct(this.backendURL + id, product).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.fetchProducts(0, this.rows);
+        this.resetPaginator();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   addProduct(product: Product) {
-    this.productService
-      .addProduct('http://localhost:3000/clothes/', product)
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.fetchProducts(0, this.rows);
-          this.resetPaginator();
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.productService.addProduct(this.backendURL, product).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.fetchProducts(0, this.rows);
+        this.resetPaginator();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   deleteProduct(id: number) {
-    this.productService
-      .deleteProduct(`http://localhost:3000/clothes/${id}`)
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.fetchProducts(0, this.rows);
-          this.resetPaginator();
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.productService.deleteProduct(this.backendURL + id).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.fetchProducts(0, this.rows);
+        this.resetPaginator();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   ngOnInit() {
